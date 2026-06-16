@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --color-brand-green: #1F4D3A;
+  --color-brand-gold: #D4AF37;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #1a1a1a;
+    background-color: #ffffff;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-playfair);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-base {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-green text-white font-semibold rounded-lg transition-all duration-200 hover:bg-brand-green-light hover:shadow-card-hover active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-gold text-white font-semibold rounded-lg transition-all duration-200 hover:bg-brand-gold-light hover:shadow-gold active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-brand-green text-brand-green font-semibold rounded-lg transition-all duration-200 hover:bg-brand-green hover:text-white active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2;
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg transition-all duration-200 hover:bg-white hover:text-brand-green active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+
+  .card-base {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-brand-gold uppercase tracking-widest;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold text-brand-green;
+  }
+
+  .section-subtitle {
+    @apply text-gray-600 text-lg leading-relaxed;
+  }
+
+  .gold-divider {
+    @apply w-12 h-1 bg-brand-gold rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
